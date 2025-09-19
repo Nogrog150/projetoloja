@@ -85,7 +85,7 @@ app.delete("/produto/:id", (req,res)=>{
     // OBTER O ID DO PRODUTO NA URL
     const produtoId = req.params.id;
     // ARMAZENA O TAMANHO DO INICIO DO ARRAY DE PRODUTOS
-    const inicioProduto = produtos.length();
+    const inicioProduto = produtos.length;
     // FILTRA O ARRAY E REMOVE O PRODUTO COM O ID ESCOLHIDO
     produtos= produtos.filter(item=>item.id !== produtoId)
     // VERIFICA SE O PRODUTO FOI REMOVIDO
@@ -93,7 +93,7 @@ app.delete("/produto/:id", (req,res)=>{
         return res.status(404).json({error:"Produto não encontrado"})
     }
     // MENSAGEM AFIRMANDO QUE O PRODUTO FOI REMOVIDO
-    res.status(201).send("Produto removo com sucesso")
+    res.status(201).send("Produto removido com sucesso")
 
 
 })
